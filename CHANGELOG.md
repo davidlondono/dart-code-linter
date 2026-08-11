@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.0](https://github.com/bancolombia/dart-code-linter/compare/v4.1.9...v4.2.0) (2026-08-11)
+
+
+### Features
+
+* Add new rules ([#260](https://github.com/bancolombia/dart-code-linter/issues/260)) ([12642bc](https://github.com/bancolombia/dart-code-linter/commit/12642bccdce342d7fe761e08fa2a4f664a6c5501))
+
 ## 4.2.0
 - Add the `avoid-non-configurable-callbacks-in-init-state` rule, which flags a `State.initState` that configures a widget-supplied object (e.g. `widget.controller.setNavigationDelegate(...)`) with a callback object whose named callbacks never reference the widget's own fields — a sign the behavior is fully hardcoded with no way for callers of the widget to customize it.
 - Add the `avoid-non-exhaustive-switch-on-sealed-classes` rule, which flags a `default`/wildcard (`_`) case in a `switch` statement or expression over a sealed type. Relying on a fallback case defeats the compiler's exhaustiveness checking for sealed hierarchies, so newly added subtypes can silently fall through instead of forcing an explicit decision at each call site.
@@ -141,5 +148,3 @@
 
 ## 1.0.0
 - Fork: [Dart code metrics 5.7.3](https://github.com/dart-code-checker/dart-code-metrics)
-
-
