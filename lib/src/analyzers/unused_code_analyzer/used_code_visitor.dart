@@ -275,8 +275,7 @@ class UsedCodeVisitor extends RecursiveAstVisitor<void> {
     if (enclosingElement is LibraryElement ||
         enclosingElement is LibraryFragment) {
       _recordUsedElement(element);
-    } else if (_recordClassMembers &&
-        enclosingElement is InterfaceElement) {
+    } else if (_recordClassMembers && enclosingElement is InterfaceElement) {
       _recordUsedElement(element);
     } else if (enclosingElement is ExtensionElement) {
       _recordUsedExtension(enclosingElement);

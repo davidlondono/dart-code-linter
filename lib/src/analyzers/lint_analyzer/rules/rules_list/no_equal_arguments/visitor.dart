@@ -46,7 +46,8 @@ class _Visitor extends RecursiveAstVisitor<void> {
                 argNamed.expression,
                 otherNamed.expression,
               ) &&
-              argNamed.expression.toString() == otherNamed.expression.toString();
+              argNamed.expression.toString() ==
+                  otherNamed.expression.toString();
         }
 
         final argExpr = unwrapArgumentExpression(argument);
