@@ -312,7 +312,9 @@ class UnnecessaryNullableAnalyzer {
     final sourceUrl = libraryFragment?.source.uri;
 
     return UnnecessaryNullableIssue(
-      declarationName: element.displayName,
+      declarationName: element is ConstructorElement && element.name == 'new'
+          ? element.enclosingElement?.displayName ?? element.displayName
+          : element.displayName,
       declarationType: element.kind.displayName,
       parameters: parameters.map((parameter) => parameter.toString()),
       location: SourceLocation(
